@@ -25,21 +25,28 @@ class Manager < Employee
   end
 
   def bonus(multiplier)
-    sum = 0
+    self.totalsum * multiplier
+  end
+
+  def totalsum
+    totalsum = 0
     @employees.each do |employee|
       if employee.is_a?(Manager)
-        sum += self.bonus(employee)
+        totalsum += employee.salary + employee.totalsum
       else
-        sum += (@salary * multiplier)
+         totalsum += employee.salary
       end
     end
-    sum
+    totalsum
   end
+
+
+
 end
 
 manager1 = Manager.new("john", "manager", 10000)
 employee1 = Employee.new("Dave", "director", 5000, manager1)
 manager1.add_employee(employee1)
-p manager1.employees
+# p manager1.employees
 p employee1.bonus(5)
 p manager1.bonus(10)
