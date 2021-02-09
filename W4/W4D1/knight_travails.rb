@@ -1,4 +1,4 @@
-require_relative './lib/00_tree_node.rb'
+require_relative '../W3D5/treenode/lib/00_tree_node.rb'
 class KnightPathFinder
 
     BORDER = (0..7).to_a
@@ -22,7 +22,7 @@ class KnightPathFinder
 
     def initialize(start_pos)
         @root_node = PolyTreeNode.new(start_pos)
-        @move_tree = []
+         @move_tree = []
         @considered_positions = [start_pos]
     end
 
@@ -45,13 +45,43 @@ class KnightPathFinder
           current_node.add_child(new_node)
           queue << new_node
         end
+        
       end
     end
 
+    def find_path(end_pos)
+    end_node = @root_node.dfs(end_pos)
+    
+    KnightPathFinder.trace_path_back(end_node)
+    end
+
+    def self.trace_path_back(node)
+      # return nil if node.nil?
+      #return node if node.value == @root_node.value
+      # p node
+      path = [node]
+     return node if node.parent == nil 
+
+     while node.parent != nil 
+      path.unshift(node.parent)
+      node = node.parent
+     end
+     path
+  
+    end
+     
+
 end
+   
+p kpf = KnightPathFinder.new([0, 0])
+ kpf.build_move_tree
+p kpf.find_path([7, 6]) # => [[0, 0], [1, 2], [2, 4], [3, 6], [5, 5], [7, 6]]
+p kpf.find_path([6, 2]) # => [[0, 0], [1, 2], [2, 0], [4, 1], [6, 2]]
+
 
 # p KnightPathFinder.valid_moves([0,0])
 tree = KnightPathFinder.new([0,0])
 # p tree.new_move_positions([0,0])
 tree.build_move_tree
-p tree.move_tree
+# p tree.move_tree
+# p tree.find_path([2,4])
