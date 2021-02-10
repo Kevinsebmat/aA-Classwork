@@ -1,7 +1,8 @@
+require 'byebug'
 class Piece
-    attr_reader :color, :board
+    attr_reader :color, :board, :pos
     def initialize (pos,board,color)
-        @pos= pos
+        @pos = pos
         @board = board
         @color= color
     end
@@ -19,7 +20,7 @@ class Piece
     end
 
     def pos=(val)
-
+        @pos = val
     end
 
     def symbol

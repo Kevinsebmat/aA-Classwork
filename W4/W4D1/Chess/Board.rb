@@ -1,4 +1,5 @@
-require_relative 'Piece'
+require_relative 'piece/Piece'
+require 'byebug'
 class Board
  
     def initialize(rows = Array.new(8){Array.new(8)})
@@ -30,7 +31,6 @@ class Board
 
     def move_piece!(start_pos, end_pos)
     #raise 'piece cannot move like that' unless piece.moves.include?(end_pos)
-
     self[end_pos] = self[start_pos]
     self[end_pos].move(end_pos)
     self[start_pos] = nil
