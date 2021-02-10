@@ -22,7 +22,22 @@ class Board
         #we need something that stores color
         piece= self[end]
 
+        move_piece!(start_pos, end_pos)
     end
+
+
+    
+
+    def move_piece!(start, end)
+    piece = self[start]
+    raise 'piece cannot move like that' unless piece.moves.include?(end)
+
+    self[end] = piece
+    self[start] = sentinel
+    piece.pos = end
+
+    nil
+  end
 
     # def set_positions
     #     rook_pos=[[0,0],[0,7],[7,0], [7,7]]
