@@ -1,4 +1,5 @@
 class Piece
+    attr_reader :color, :board
     def initialize (pos,board,color)
         @pos= pos
         @board = board
@@ -25,12 +26,11 @@ class Piece
 
     end
 
-    def move
-
-
+    def move(val)
+        self.pos = val
     end
     
- Private
+ private
     def move_into_check?(end_pos)
 
     end
