@@ -1,0 +1,4 @@
+class nullPiece < Piece
+
+
+end
