@@ -5,18 +5,19 @@ class Piece
         @pos = pos
         @board = board
         @color= color
+        board[pos] = self
     end
 
     def to_s
-
+        " #{symbol} "
     end
 
     def empty?
-
+        self.is_a?(nullPiece)
     end
 
     def valid_moves
-
+        raise "Can't use this one!"
     end
 
     def pos=(val)
@@ -24,7 +25,7 @@ class Piece
     end
 
     def symbol
-
+        raise "Can't use this one!"
     end
 
     def move(val)
