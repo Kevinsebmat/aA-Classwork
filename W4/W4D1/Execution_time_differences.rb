@@ -15,6 +15,7 @@ def my_min(array)
 
 
 def largest_contiguous_subsum(list)
+    
     sums=[]
     current_sum = 0
     (0...list.length).each do |i|
@@ -22,7 +23,25 @@ def largest_contiguous_subsum(list)
             sums << list[i..j]
         end
     end
-    newsums= sums.each{&:sum}
+    newsums = sums.each{&:sum}
+
     newsums.max
 
 end
+
+#(n * (n - 1)) + (n^3) + (n^3)
+#2(n^3)
+#O(n^3)
+
+def largest_contiguous_subsum(list) 
+    current_sum = list[0]
+    largest_sum = list[0]
+    list.each do |i|
+        current_sum += i
+        largest_sum = current_sum if current_sum > largest_sum
+    end
+    largest_sum
+end
+
+#O(n)
+
