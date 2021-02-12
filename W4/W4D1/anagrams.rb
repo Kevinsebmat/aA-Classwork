@@ -16,3 +16,17 @@ def first_anagram?(str_1, str_2)
 end
 
 # n!
+def second_anagram?(str_1, str_2)
+  return false if str_1.length != str_2.length
+  
+  str_2 = str_2.split('')
+  str_1.each_char do |char| 
+   i = str_2.index(char) 
+   unless i == nil
+      str_2.delete_at(i)
+   end
+  end
+  str_2.empty?
+end
+
+p second_anagram?('cat', 'ca')
