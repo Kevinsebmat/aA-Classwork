@@ -74,8 +74,9 @@ class ResizingIntSet
   end
 
   def insert(num)
-    unless include?(num)
+    unless self.include?(num)
       @store[num % num_buckets ] << num
+      @count += 1
     end
   end
 
@@ -97,5 +98,8 @@ class ResizingIntSet
   end
 
   def resize!
+    if num_buckets == @count 
+      self.store = Array.new(num_buckets * 2) {Array.new}
+    end
   end
 end
