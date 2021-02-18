@@ -1,0 +1,12 @@
+html,body,title,header,footer,nav,ul,li,ol,h2,section,form,figcaption,figure,p,label,input,select,option,textarea,script,img,link,meta{
+    margin:0;
+    padding:0;
+    border:0;
+    font:inherit;
+}
+
+body {
+    line-height : 1.5;
+}
+
+img {width: 100%;}
