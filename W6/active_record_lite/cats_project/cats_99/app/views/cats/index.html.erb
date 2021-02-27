@@ -1,0 +1,22 @@
+<h1>Here are all our Cats</h1>
+
+<ul>
+       
+     <% @kitties.each do |cat|  %>
+        <li> 
+            <ul>
+               <li><%= cat.name %></li>
+               <li><%= cat.birth_date%></li>
+               <li><%= cat.color %></li>
+               <li><%= cat.sex %></li>
+               <li><%= cat.description %></li> 
+            </ul>
+        </li>
+
+               
+               <%# %= <%=render 'cat', cat:cat %>
+    <% end %>
+
+</ul>
+
+

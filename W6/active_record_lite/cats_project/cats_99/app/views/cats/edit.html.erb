@@ -1,0 +1,35 @@
+<h1>Edit Cat Form</h1>
+<form action="<%=cat_url(@kitty)%>"method="POST">
+    <input type = 'hiddem' name ='_method' value ='PATCH'>
+    
+    <label>Birth Day:
+         <input type='date' name='cat[birth_day]' value='<%=@kitty.birth_date%>'> 
+    </label>
+    <label>Color:         
+        <select name='cat[color]' >
+            <option selected>--select color--</option>
+            <option value='black'>black</option>
+            <option value='white'>white</option>
+            <option value='brown'>brown</option>
+            <option value='red'>red</option>
+            <option value='rainbow'>rainbow</option>
+        </select>
+    </label>   
+     <label>Name:
+         <input type='text' name='cat[name]' value='<%=@kitty.name%>'> 
+    </label>
+    <label>Sex:
+        <input type='radio' name='cat[sex]' value='M'> 
+        <input type='radio' name='cat[sex]' value='F'> 
+    </label>
+
+       <label>Description:
+        <input type='textarea' name='cat[description]' value='<%= @kitty.description%>'>  
+    
+    </label>
+
+
+    <input type='submit' value='Edit Cat'>
+</form>  
+
+        
