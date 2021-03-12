@@ -1,0 +1,78 @@
+/* PHASE 0: Sidebar */
+
+
+.profile-picture {
+  display: block;
+  position: relative;
+  border: 1px solid;
+  border-color: black;
+  margin-top: -125px;
+  overflow: hidden;
+}
+
+.profile-info h2 {
+  font-weight: 700;
+  font-size: 24px;
+  font-style: italic;
+  margin-bottom: 25px;
+  margin-top: 25px;
+}
+
+.profile-info {
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.profile-nav ul li {
+  font-weight: 600;
+  font-size: 16px;
+  border-top: 1px solid;
+  border-color: gray;
+  padding: 5px;
+}
+
+.profile-nav ul li:last-child {
+  border-bottom: 1px solid;
+  border-color: gray;
+  margin-bottom: 20px;
+}
+
+.profile-nav ul li:hover {
+  cursor: pointer;
+  background-color: rgb(241, 235, 235);
+}
+
+.online {
+  position: absolute;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 12px;
+  color: white;
+  transform: rotate(-45deg) translate(-25%);
+  background-color: rgb(11, 201, 11);
+  padding: 5px 30px;
+  letter-spacing: 2px;
+  left: -10px;
+  top: -5px;
+}
+
+.friends ul li{
+  width: 55px;
+  height: 55px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color: black;
+  margin: 2px;
+  overflow: hidden;
+}
+
+.friends ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.friends ul li {
+  margin-bottom: 10px;
+}
