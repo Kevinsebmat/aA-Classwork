@@ -1,0 +1,28 @@
+* {
+  box-sizing:border-box;
+}
+
+ul {
+  padding: 0px;
+  display: flex;
+  width: 300px;
+  flex-wrap: wrap;
+  /* border: 1px solid black */
+}
+
+li {
+
+  list-style: none; 
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  background-color: lightgray;
+}
+
+li.clicked {
+  background-color: white;
+}
+
+li:hover{
+  background-color: yellow;
+}
